@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["'Space Grotesk'", "system-ui", "sans-serif"],
-        body: ["'DM Sans'", "system-ui", "sans-serif"],
+        heading: ["'Fredoka'", "system-ui", "sans-serif"],
+        body: ["'Nunito'", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -86,11 +86,16 @@ export default {
           from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "wiggle": {
+          "0%, 100%": { transform: "rotate(-2deg)" },
+          "50%": { transform: "rotate(2deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.5s ease-out forwards",
+        "wiggle": "wiggle 0.5s ease-in-out",
       },
     },
   },
