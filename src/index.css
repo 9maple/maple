@@ -6,41 +6,41 @@
 
 @layer base {
   :root {
-    --background: 230 35% 93%;
-    --foreground: 230 30% 20%;
+    --background: 230 45% 86%;
+    --foreground: 230 30% 25%;
 
-    --card: 240 30% 96%;
-    --card-foreground: 230 30% 20%;
+    --card: 232 40% 92%;
+    --card-foreground: 230 30% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 30% 20%;
+    --popover: 230 40% 95%;
+    --popover-foreground: 230 30% 25%;
 
-    --primary: 250 60% 72%;
+    --primary: 232 50% 72%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 340 60% 82%;
-    --secondary-foreground: 340 60% 30%;
+    --secondary: 340 45% 78%;
+    --secondary-foreground: 340 50% 30%;
 
-    --muted: 230 25% 90%;
-    --muted-foreground: 230 15% 50%;
+    --muted: 230 30% 80%;
+    --muted-foreground: 230 20% 45%;
 
-    --accent: 45 90% 85%;
-    --accent-foreground: 35 60% 30%;
+    --accent: 45 80% 82%;
+    --accent-foreground: 35 55% 30%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 20% 87%;
-    --input: 240 20% 87%;
-    --ring: 250 60% 72%;
+    --border: 232 30% 82%;
+    --input: 232 30% 82%;
+    --ring: 232 50% 72%;
 
     --radius: 1rem;
 
-    --step-accent: 250 60% 72%;
+    --step-accent: 232 50% 72%;
     --step-accent-foreground: 0 0% 100%;
 
-    --surface-warm: 340 50% 94%;
-    --surface-cool: 210 40% 94%;
+    --surface-warm: 45 70% 88%;
+    --surface-cool: 232 45% 82%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -79,9 +79,30 @@
   }
 
   .wavy-divider {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath d='M0 20 Q150 0 300 20 Q450 40 600 20 Q750 0 900 20 Q1050 40 1200 20' fill='none' stroke='%23c4b5fd' stroke-width='3'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath d='M0 20 Q150 0 300 20 Q450 40 600 20 Q750 0 900 20 Q1050 40 1200 20' fill='none' stroke='%239b92c9' stroke-width='3'/%3E%3C/svg%3E");
     background-repeat: repeat-x;
     background-size: 600px 40px;
     height: 40px;
+  }
+
+  .scallop-border {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 20'%3E%3Cpath d='M0 20 Q15 0 30 20 Q45 0 60 20 Q75 0 90 20 Q105 0 120 20' fill='hsl(45, 70%25, 88%25)' /%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 120px 20px;
+    height: 20px;
+  }
+
+  .paw-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60' opacity='0.08'%3E%3Ctext x='15' y='35' font-size='20'%3E🐾%3C/text%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  .word-art-title {
+    background: linear-gradient(180deg, hsl(232 60% 78%) 0%, hsl(232 50% 65%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px hsl(232 50% 60% / 0.3));
+    text-shadow: none;
   }
 }
