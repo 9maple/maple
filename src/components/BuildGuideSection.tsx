@@ -22,7 +22,6 @@ const BuildGuideSection = () => (
         viewport={{ once: true }}
         className="text-center mb-12"
       >
-        <span className="text-2xl mb-2 inline-block">🔧</span>
         <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-3">
           step-by-step build guide
         </h2>

@@ -1,44 +1,60 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const dogs = [
   {
-    name: "[Dog Name 1]",
-    emoji: "🐕",
-    story: "[Insert this dog's story here — e.g., how they lost mobility and how the wheelchair helped them.]",
+    name: "rambo",
+    story: "stinki boi",
     imagePlaceholder: "[Insert photo of Dog 1]",
+    image: "/rambo.png",
   },
   {
-    name: "[Dog Name 2]",
-    emoji: "🦮",
-    story: "[Insert this dog's story here — e.g., their breed, condition, and experience with the wheelchair.]",
+    name: "lexi",
+    story: "we gotta test on lexi soon :(",
     imagePlaceholder: "[Insert photo of Dog 2]",
+    image: "/lexi.png",
   },
   {
-    name: "[Dog Name 3]",
-    emoji: "🐶",
-    story: "[Insert this dog's story here — e.g., background info and how this project made a difference.]",
+    name: "kenny",
+    story: "kenny was run over and had to get limb amputated",
     imagePlaceholder: "[Insert photo of Dog 3]",
+    image: "/kenny.png",
   },
 ];
 
 const DogCarousel = () => {
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   const prev = () => setCurrent((c) => (c === 0 ? dogs.length - 1 : c - 1));
   const next = () => setCurrent((c) => (c === dogs.length - 1 ? 0 : c + 1));
 
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setCurrent((c) => (c === dogs.length - 1 ? 0 : c + 1));
+    }, 3000);
+    return () => clearInterval(id);
+  }, [paused]);
+
   const dog = dogs[current];
 
   return (
-    <div className="relative w-full">
+    <div
+      className="relative w-full"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div className="bg-card border border-border rounded-3xl overflow-hidden shadow-sm">
-        <div className="md:flex">
-          {/* Image placeholder */}
-          <div className="md:w-2/5 placeholder-block rounded-none min-h-[220px] md:min-h-[280px] border-0 border-b md:border-b-0 md:border-r text-sm">
-            {dog.imagePlaceholder}
+        <div className="md:flex md:items-start">
+          {/* Image */}
+          <div className="md:w-2/5 h-[260px] md:h-[320px] rounded-none border-0 border-b md:border-b-0 md:border-r overflow-hidden shrink-0">
+            {dog.image
+              ? <img src={dog.image} alt={dog.name} className="w-full h-full object-cover" />
+              : <div className="placeholder-block w-full h-full text-sm">{dog.imagePlaceholder}</div>
+            }
           </div>
 
           {/* Story content */}

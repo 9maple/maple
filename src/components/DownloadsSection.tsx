@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { FileDown, FileText, Ruler, FolderOpen } from "lucide-react";
 
 const downloads = [
-  { icon: FileDown, label: "STL Files", description: "[Insert link to STL file pack]", emoji: "📦" },
-  { icon: FileText, label: "Build Guide PDF", description: "[Insert link to PDF build guide]", emoji: "📄" },
-  { icon: Ruler, label: "Measurement Sheet", description: "[Insert link to measurement template]", emoji: "📏" },
-  { icon: FolderOpen, label: "Extra Resources", description: "[Insert link to additional resources]", emoji: "📂" },
+  { icon: FileDown, label: "STL Files", description: "[Insert link to STL file pack]", href: "#", emoji: "📦" },
+  { icon: FileText, label: "Build Guide PDF", description: "[Insert link to PDF build guide]", href: "#", emoji: "📄" },
+  { icon: Ruler, label: "Measurement Sheet", description: "Record measurements for your dog's size", href: "/measurement.pdf", emoji: "📏" },
+  { icon: FolderOpen, label: "Extra Resources", description: "[Insert link to additional resources]", href: "#", emoji: "📂" },
 ];
 
 const DownloadsSection = () => (
@@ -17,7 +17,6 @@ const DownloadsSection = () => (
         viewport={{ once: true }}
         className="text-center mb-10"
       >
-        <span className="text-2xl mb-2 inline-block">📥</span>
         <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-3">
           downloads
         </h2>
@@ -30,7 +29,9 @@ const DownloadsSection = () => (
         {downloads.map((d, i) => (
           <motion.a
             key={d.label}
-            href="#"
+            href={d.href}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
